@@ -6,20 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Momentum Clone</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
 </head>
 <body>
-    <form class="hidden" id="login-form">
-        <input required maxlength="15" type="text" placeholder="What is your name?" />
-        <input type="submit" value="Log In" />
-    </form>
-    <h1 id="greeting" class="hidden"></h1>
-    <form id="todo-form">
-        <input type="text" placeholder="Write a To Do and Press Enter" required />
-    </form>
-    <ul id="todo-list">
-        
-    </ul>
+    <div class="hidden" id="main">
+    
+    <h1 id="greeting"></h1>
+    
+    <div id="father-todo">
+        <form id="todo-form">
+            <input id="todo-input" type="text" placeholder="Write a To Do and Press Enter" required />
+        </form>
+        <ul id="todo-list">
+            
+        </ul>
+    </div>
+
     <h2 id="clock">00:00</h2>
 
     <div id="quote">
@@ -28,8 +35,22 @@
     </div>
 
     <div id="weather">
-        <span></span>
-        <span></span>
+        <div>
+            <i id="mood"></i>
+            <span id="degree"></span><i class="far fa-circle"></i>
+        </div>
+        <div><span id="city"></span></div>
+        
+    </div>
+    </div>
+
+    <div class="hidden" id="login-screen">
+        <form id="login-form">
+            <input required maxlength="15" type="text" placeholder="What is your name?" />
+            <button class="material-icons">login</button>
+            <!-- <input type="submit" value="Log In" /> -->
+        </form>
+        <img src="img/bg.jpg">
     </div>
 
     <script src="js/weather.js"></script>
@@ -38,5 +59,9 @@
     <script src="js/quotes.js"></script>
     <script src="js/backgound.js"></script>
     <script src="js/todo.js"></script>
+    <script src="js/checkbox.js"></script>
+    <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
+
+
 </body>
 </html>

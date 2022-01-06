@@ -1,5 +1,4 @@
-const weatherId1 = document.querySelector("#weather span:first-child")
-const weatherId2 = document.querySelector("#weather span:last-child")
+
 const API_KEY = "25d00922b44984512b20d85d5ae79fe6"
 
 
@@ -11,17 +10,36 @@ function onGeoOk(position) {
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            const name = data.name;
+            const city = document.querySelector("#city")
+            const mood = document.querySelector("#mood")
+            const degree = document.querySelector("#degree")
             const weather = data.weather[0].main;
-            weatherId1.innerText = name;
-            weatherId2.innerText = weather;
+
+            city.innerText = data.name;
+            // mood.innerText = data.weather[0].main;
+            degree.innerText = data.main.temp;
+            if (weather === "Clouds") {
+                mood.classList.add("fas", "fa-cloud");
+            } else if (weather === "Clear") {
+                mood.classList.add("fas", "fa-sun");
+            } else if (weather === "Rain") {
+                mood.classList.add("fas", "fa-umbrella");
+            } else if (weather === "Snow") {
+                mood.classList.add("fas", "fa-snowflake");
+            } else {
+                mood.innerText = data.weather[0].main;
+            }
+
         });
 }
 
 function onGeoError() {
-    alert("can't find you. No weather for you")
+    alert("Can't find you. No weather for you")
 
 }
 
 
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+
+
+

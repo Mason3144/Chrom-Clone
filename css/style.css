@@ -1,7 +1,209 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&family=Roboto:wght@300;400;500;700&display=swap");
+
 body {
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   background-color: beige;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
 }
 
 .hidden {
   display: none;
+}
+
+body img {
+  width: 100vw;
+  height: 100vh;
+  z-index: -2;
+  position: absolute;
+}
+
+#login-screen {
+  width: 100vw;
+  height: 100vh;
+}
+
+#login-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+}
+
+#login-form input {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: none;
+  text-decoration-line: underline;
+  text-underline-position: under;
+  font-size: 30px;
+  font-weight: 700;
+  width: 300px;
+  text-align: center;
+}
+#login-form input:focus {
+  outline: none;
+}
+
+#login-form button {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: none;
+  font-size: 30px;
+  transition: all 0.5s ease-in-out;
+}
+#login-form button:hover {
+  color: tomato;
+  transform: scale(1.2);
+  font-weight: 700;
+}
+
+#login-screen img {
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+}
+
+#greeting {
+  color: white;
+  margin: 0;
+  position: absolute;
+  top: 49%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#clock {
+  color: white;
+  font-size: 90px;
+  font-weight: 700;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+#quote {
+  color: white;
+  margin: 10px;
+  width: 70%;
+  position: absolute;
+  top: 92%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+}
+
+#weather {
+  color: white;
+  position: absolute;
+  top: 5%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+}
+
+#weather div:first-child {
+  position: relative;
+}
+
+#degree {
+  margin-left: 5px;
+}
+
+.fa-circle {
+  transform: scale(0.3);
+  position: absolute;
+  font-weight: 700;
+  top: -2px;
+  right: -8px;
+}
+
+#father-todo {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+#todo-input {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: none;
+  text-decoration-line: underline;
+  text-underline-position: under;
+  width: 200px;
+  text-align: center;
+}
+
+::placeholder {
+  color: white;
+  margin: 5px;
+  padding: 5px;
+}
+
+#todo-input:focus {
+  outline: none;
+}
+
+#todo-list button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  width: 5px;
+  height: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+#todo-list li {
+  color: white;
+  display: flex;
+  align-items: center;
+
+  width: 200px;
+}
+
+#todo-list li h3 {
+  width: 10px;
+  height: 10px;
+  margin: 0 2px 0 0;
+  border: white solid 1px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#todo-list li span {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#todo-list button i {
+  color: white;
+  margin-left: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+#todo-list button i:hover {
+  color: tomato;
+  transform: scale(1.2);
 }
