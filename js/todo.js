@@ -27,28 +27,37 @@ function deleteToDo(event) {
     saveToDos();
 }
 
+function checkBox(event) {
+    const checking = event.target;
+    if (checking.classList.value === "") {
+        checking.classList.add("checked");
+        checking.parentElement.children[1].style.textDecorationLine = "line-through";
+
+    } else {
+        checking.classList.remove("checked");
+        checking.parentElement.children[1].style.textDecorationLine = "none";
+    }
+}
+
 
 function paintToDo(newTodo) {
     const li = document.createElement("li");
     li.id = newTodo.id;
     const span = document.createElement("span");
     const btn = document.createElement("button");
-    const i = document.createElement("i")
+    const i = document.createElement("i");
+    const h4 = document.createElement("h4");
+    
+    span.innerText = newTodo.text;
+    i.classList.add("far","fa-times-circle");
+    i.addEventListener("click", deleteToDo);
+    h4.addEventListener("click", checkBox)
+    li.appendChild(h4);
     li.appendChild(span);
     li.appendChild(btn);
     btn.appendChild(i);
     toDoList.appendChild(li);
-    span.innerText = newTodo.text;
-    i.classList.add("far","fa-times-circle");
-    i.addEventListener("click", deleteToDo);
 }
-
-
-
-
-
-
-
 
 function handleToDoSubmit(event) {
     event.preventDefault();
@@ -64,9 +73,6 @@ function handleToDoSubmit(event) {
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
-
-
-
 
 const savedToDos = localStorage.getItem(TODOS_KEY)
 

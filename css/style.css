@@ -207,3 +207,18 @@ body img {
   color: tomato;
   transform: scale(1.2);
 }
+
+.checked {
+  background-color: white;
+}
+
+#todo-list h4 {
+  border: black solid 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  margin: 0 2px 0 0;
+  border-color: white;
+}
